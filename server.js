@@ -41,16 +41,6 @@ app.put('/students/:id', (req, res) => {
     console.log("updated successfully")
 });
 
-app.delete('/students/:id', (req, res) => {
-    const index = students.findIndex(s => s.id === Number(req.params.id));
-    if (index !== -1) {
-        const deletedStudent = students.splice(index, 1);
-        res.send(deletedStudent);
-    } else {
-        res.status(404).send({ message: 'deleted successfully' });
-    }
-    console.log("deleted successfully")
-});
 
 // Start the server
 app.listen(PORT, () => {
